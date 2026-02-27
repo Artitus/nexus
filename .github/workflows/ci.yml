@@ -33,7 +33,7 @@ jobs:
           version: 0.13.0
 
       - name: Cache Zig build artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             nexlink/.zig-cache
@@ -67,7 +67,7 @@ jobs:
           sudo apt-get install -y cmake clang
 
       - name: Cache CMake build directory
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: nexroute/build
           key: cmake-${{ runner.os }}-${{ hashFiles('nexroute/CMakeLists.txt', 'nexroute/src/**', 'nexroute/include/**') }}
@@ -104,7 +104,7 @@ jobs:
           components: clippy, rustfmt
 
       - name: Cache Cargo registry and build artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/bin/
@@ -167,7 +167,7 @@ jobs:
           cache: false
 
       - name: Cache Go module and build artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/go/pkg/mod
